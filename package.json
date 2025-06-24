@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vite",               // Para rodar o servidor de desenvolvimento
+    "build": "vite build",       // Para gerar a build de produção (Vercel vai usar isso)
+    "preview": "vite preview"    // Para testar a build gerada localmente
   },
   "keywords": [],
   "author": "",
@@ -39,6 +42,15 @@
     "tsx": "^4.20.3",
     "wouter": "^3.7.1",
     "ws": "^8.18.2",
-    "zod": "^3.25.67"
+    "zod": "^3.25.67",
+    "vite": "^4.0.0"             // Adicionado Vite para construção
+  },
+  "devDependencies": {
+    "vite": "^4.0.0",            // Vite como dependência de desenvolvimento
+    "react-refresh": "^0.14.0",  // Para hot-reloading no Vite
+    "tailwindcss": "^4.1.10"     // Certifique-se de ter o tailwind para o desenvolvimento
+  },
+  "engines": {
+    "node": ">=18"               // Garantir que use o Node >=18
   }
 }
