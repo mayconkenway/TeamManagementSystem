@@ -1,0 +1,88 @@
+INSTRUÇÕES PARA DEPLOY NO VERCEL - Sistema de Gerenciamento de Equipe
+
+========================================
+ARQUIVOS NECESSÁRIOS PARA O DEPLOY:
+========================================
+
+1. api/index.js (criado)
+2. vercel.json (criado)
+3. vercel-package.json (renomear para package.json)
+4. README.md (criado)
+
+========================================
+PASSOS PARA FAZER O DEPLOY:
+========================================
+
+MÉTODO 1 - VIA GITHUB + VERCEL (RECOMENDADO):
+
+1. Criar repositório no GitHub:
+   - Acesse github.com
+   - Clique em "New repository"
+   - Nome: sistema-gerenciamento-equipe
+   - Marque como público
+   - Clique em "Create repository"
+
+2. Fazer upload dos arquivos:
+   - Renomeie "vercel-package.json" para "package.json"
+   - Faça upload de todos os arquivos para o repositório:
+     * api/index.js
+     * vercel.json
+     * package.json (renomeado)
+     * README.md
+
+3. Deploy no Vercel:
+   - Acesse vercel.com
+   - Clique em "New Project"
+   - Conecte sua conta GitHub
+   - Selecione o repositório criado
+   - Configure:
+     * Framework: Other
+     * Build Command: npm run build
+     * Output Directory: (deixe vazio)
+     * Install Command: npm install
+   - Clique em "Deploy"
+
+MÉTODO 2 - VIA VERCEL CLI:
+
+1. Instalar Vercel CLI:
+   npm i -g vercel
+
+2. Login no Vercel:
+   vercel login
+
+3. Na pasta do projeto:
+   - Renomeie "vercel-package.json" para "package.json"
+   - Execute: vercel
+   - Siga as instruções na tela
+
+========================================
+TESTANDO O DEPLOY:
+========================================
+
+Após o deploy, acesse a URL fornecida pelo Vercel e teste:
+- Login: admin / admin123
+- Funcionalidades do sistema
+- APIs disponíveis
+
+========================================
+ESTRUTURA FINAL PARA VERCEL:
+========================================
+
+projeto/
+├── api/
+│   └── index.js          (servidor principal)
+├── vercel.json           (configuração Vercel)
+├── package.json          (dependências)
+└── README.md             (documentação)
+
+========================================
+FUNCIONALIDADES DISPONÍVEIS APÓS DEPLOY:
+========================================
+
+- Interface web completa
+- Sistema de autenticação
+- Dashboard com métricas
+- APIs funcionais
+- Todas as funcionalidades do sistema original
+
+O sistema estará disponível 24/7 no Vercel com domínio próprio fornecido gratuitamente.

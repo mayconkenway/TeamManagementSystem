@@ -1,0 +1,29 @@
+{
+  "name": "sistema-gerenciamento-equipe",
+  "version": "1.0.0",
+  "description": "Sistema completo de gerenciamento de equipe com autenticação, dashboard, calendário, avisos e chat em tempo real",
+  "main": "api/index.js",
+  "scripts": {
+    "start": "node api/index.js",
+    "dev": "node api/index.js",
+    "build": "echo 'Build completed'",
+    "vercel-build": "echo 'Vercel build completed'"
+  },
+  "keywords": [
+    "gerenciamento",
+    "equipe",
+    "dashboard",
+    "calendario",
+    "chat",
+    "avisos"
+  ],
+  "author": "Sistema de Gerenciamento",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "ws": "^8.14.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
