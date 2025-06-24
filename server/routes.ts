@@ -5,7 +5,7 @@ import { storage } from "./storage";
 import { authenticateToken, authorizeRoles, generateToken, comparePassword, type AuthRequest } from "./auth";
 import { insertUserSchema, insertCalendarEventSchema, insertNoticeSchema, insertNoticeTypeSchema, insertNoticeTagSchema, insertChatMessageSchema, insertDailyTrackingSchema } from "@shared/schema";
 
-export async function registerRoutes(app: Express): Promise<Server> {
+export async function registerRoutes(app: Express): Promise<void> {
   // Auth routes
   app.post("/api/auth/login", async (req, res) => {
     try {
@@ -300,33 +300,5 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  const httpServer = createServer(app);
-
-  // WebSocket setup for real-time chat
-  const wss = new WebSocketServer({ server: httpServer, path: '/ws' });
-
-  wss.on('connection', (ws: WebSocket) => {
-    console.log('Nova conexão WebSocket estabelecida');
-
-    ws.on('message', (message: string) => {
-      try {
-        const data = JSON.parse(message);
-        
-        // Broadcast message to all connected clients
-        wss.clients.forEach((client) => {
-          if (client !== ws && client.readyState === WebSocket.OPEN) {
-            client.send(JSON.stringify(data));
-          }
-        });
-      } catch (error) {
-        console.error('Erro ao processar mensagem WebSocket:', error);
-      }
-    });
-
-    ws.on('close', () => {
-      console.log('Conexão WebSocket fechada');
-    });
-  });
-
-  return httpServer;
+  // Routes registered successfully
 }

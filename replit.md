@@ -136,6 +136,12 @@ Changelog:
 Preferred communication style: Simple, everyday language.
 ```
 
+## Notes
+
+- Sistema implementado com todas as funcionalidades solicitadas
+- Dashboard configurado para mostrar atendimentos semanais conforme solicitação do usuário
+- Todas as permissões e funcionalidades funcionando conforme especificado
+
 ---
 
 **Note**: This documentation will be updated as the project develops. The current minimal state provides a foundation for future architectural decisions and implementation details.
